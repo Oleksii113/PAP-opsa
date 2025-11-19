@@ -74,6 +74,7 @@
 | RF19   | Definir **fluxos e limites** de aprovação (por papel, valor, cliente).       | Gestor              | Could      | RF18             |
 | RF20   | Registar histórico de **decisões de aprovação** e comentários.               | Sistema             | Should     | RF18             |
 
+
 ---
 
 ### 5 Compras
