@@ -80,12 +80,12 @@
 
 | Código | Requisito                                                               | Atores       | Prioridade | Dependências     |
 | :----- | :---------------------------------------------------------------------- | :----------- | :--------- | :--------------- |
-| RF18   | Registar **Fatura de Fornecedor** e **Nota de Crédito**.                | Operacional  | Must       | RF10, RF11, RF13 |
-| RF19   | Registar **pagamentos** (parciais/totais).                              | Operacional  | Must       | RF18             |
-| RF20   | Gerar **lançamentos contabilísticos automáticos** de compras.           | Contabilista | Must       | RF18             |
-| RF21   | Aprovação de compras com estados “Rascunho → Aprovado → Lançado”.       | Gestor       | Should     | -                |
-| RF22   | Configurar **limites e papéis** para aprovações (por fornecedor/valor). | Gestor       | Should     | RF21             |
-| RF23   | Histórico e justificações para aprovações/reprovações.                  | Sistema      | Should     | RF21             |
+| RF21   | Registar **Fatura de Fornecedor** e **Nota de Crédito**.                | Operacional  | Must       | RF10, RF11, RF13 |
+| RF22   | Registar **pagamentos** (parciais/totais).                              | Operacional  | Must       | RF18             |
+| RF23   | Gerar **lançamentos contabilísticos automáticos** de compras.           | Contabilista | Must       | RF18             |
+| RF24   | Aprovação de compras com estados “Rascunho → Aprovado → Lançado”.       | Gestor       | Should     | -                |
+| RF25   | Configurar **limites e papéis** para aprovações (por fornecedor/valor). | Gestor       | Should     | RF21             |
+| RF26   | Histórico e justificações para aprovações/reprovações.                  | Sistema      | Should     | RF21             |
 
 ---
 
@@ -93,13 +93,13 @@
 
 | Código | Requisito                                                          | Atores               | Prioridade | Dependências |
 | :----- | :----------------------------------------------------------------- | :------------------- | :--------- | :----------- |
-| RF22   | Movimentos de stock: entradas, saídas, transferências, devoluções. | Operacional          | Must       | RF11, RF12   |
-| RF23   | Cálculo de custo (FIFO).                                           | Contabilista         | Must       | RF22         |
-| RF24   | Contagem física e ajustes.                                         | Operacional          | Should     | RF22         |
-| RF25   | Alertas de stock (mínimos, máximos, artigos parados).              | Gestor, Operacional  | Should     | RF22         |
-| RF26   | Configurar **centros de custo** / segmentos analíticos.            | Contabilista         | Should     | RF07         |
-| RF27   | Associar documentos e lançamentos a centros de custo.              | Sistema              | Should     | RF26         |
-| RF28   | Relatórios e filtros por centro de custo/segmento.                 | Gestor, Contabilista | Should     | RF27         |
+| RF27   | Movimentos de stock: entradas, saídas, transferências, devoluções. | Operacional          | Must       | RF11, RF12   |
+| RF28   | Cálculo de custo (FIFO).                                           | Contabilista         | Must       | RF22         |
+| RF29   | Contagem física e ajustes.                                         | Operacional          | Should     | RF22         |
+| RF30   | Alertas de stock (mínimos, máximos, artigos parados).              | Gestor, Operacional  | Should     | RF22         |
+| RF31   | Configurar **centros de custo** / segmentos analíticos.            | Contabilista         | Should     | RF07         |
+| RF32   | Associar documentos e lançamentos a centros de custo.              | Sistema              | Should     | RF26         |
+| RF33   | Relatórios e filtros por centro de custo/segmento.                 | Gestor, Contabilista | Should     | RF27         |
 
 ---
 
@@ -107,10 +107,10 @@
 
 | Código | Requisito                                               | Atores                        | Prioridade | Dependências |
 | :----- | :------------------------------------------------------ | :---------------------------- | :--------- | :----------- |
-| RF29   | Criar e editar **lançamentos manuais** (com anexos).    | Contabilista                  | Must       | RF07         |
-| RF30   | Consultar **balancete e razão** exportável (PDF/Excel). | Contabilista, Auditor, Gestor | Must       | RF29         |
-| RF31   | Gerar **Demonstração de Resultados e Balanço**.         | Contabilista, Gestor          | Must       | RF30         |
-| RF32   | Gerar **Mapas de IVA** (liquidado/dedutível).           | Contabilista                  | Must       | RF16, RF20   |
+| RF34   | Criar e editar **lançamentos manuais** (com anexos).    | Contabilista                  | Must       | RF07         |
+| RF35   | Consultar **balancete e razão** exportável (PDF/Excel). | Contabilista, Auditor, Gestor | Must       | RF29         |
+| RF36   | Gerar **Demonstração de Resultados e Balanço**.         | Contabilista, Gestor          | Must       | RF30         |
+| RF37   | Gerar **Mapas de IVA** (liquidado/dedutível).           | Contabilista                  | Must       | RF16, RF20   |
 
 ---
 
@@ -118,9 +118,9 @@
 
 | Código | Requisito                                                                   | Atores                    | Prioridade | Dependências     |
 | :----- | :-------------------------------------------------------------------------- | :------------------------ | :--------- | :--------------- |
-| RF30   | Criar **contas bancárias/caixa** e respetivos saldos.                       | Contabilista, Operacional | Must       | -                |
-| RF31   | Importar **extratos bancários** (CSV/OFX) e fazer reconciliação automática. | Operacional, Contabilista | Must       | RF30, RF14, RF18 |
-| RF32   | Gerar **previsão de tesouraria** (entradas e saídas futuras).               | Gestor                    | Should     | RF15, RF19       |
+| RF38   | Criar **contas bancárias/caixa** e respetivos saldos.                       | Contabilista, Operacional | Must       | -                |
+| RF39   | Importar **extratos bancários** (CSV/OFX) e fazer reconciliação automática. | Operacional, Contabilista | Must       | RF30, RF14, RF18 |
+| RF40   | Gerar **previsão de tesouraria** (entradas e saídas futuras).               | Gestor                    | Should     | RF15, RF19       |
 
 ---
 
@@ -128,11 +128,11 @@
 
 | Código | Requisito                                                         | Atores                | Prioridade | Dependências |
 | :----- | :---------------------------------------------------------------- | :-------------------- | :--------- | :----------- |
-| RF33   | Upload de documentos com **OCR** (ler NIF, data, total, IVA).     | Operacional           | Should     | RF18         |
-| RF34   | Importar CSV/Excel de clientes, fornecedores, artigos e extratos. | Admin, Contabilista   | Should     | -            |
-| RF35   | Exportar **SAF-T (PT)** de faturação e contabilidade.             | Contabilista, Auditor | Must       | -            |
-| RF36   | (Opcional) Integração com **e-Fatura**.                           | Contabilista          | Could      | -            |
-| RF37   | Mapear documentos de integração para **centros de custo**.        | Contabilista          | Should     | RF26         |
+| RF41   | Upload de documentos com **OCR** (ler NIF, data, total, IVA).     | Operacional           | Should     | RF18         |
+| RF42   | Importar CSV/Excel de clientes, fornecedores, artigos e extratos. | Admin, Contabilista   | Should     | -            |
+| RF43   | Exportar **SAF-T (PT)** de faturação e contabilidade.             | Contabilista, Auditor | Must       | -            |
+| RF44   | (Opcional) Integração com **e-Fatura**.                           | Contabilista          | Could      | -            |
+| RF45   | Mapear documentos de integração para **centros de custo**.        | Contabilista          | Should     | RF26         |
 
 ---
 
@@ -140,9 +140,9 @@
 
 | Código | Requisito                                              | Atores              | Prioridade | Dependências     |
 | :----- | :----------------------------------------------------- | :------------------ | :--------- | :--------------- |
-| RF38   | Relatórios de vendas, compras, margens e stock.        | Gestor, Operacional | Must       | RF14, RF18, RF22 |
-| RF39   | KPIs executivos (receita, custos, EBITDA, PMR, PMP).   | Gestor              | Should     | RF38             |
-| RF40   | Personalização de relatórios e exportação (PDF/Excel). | Todos               | Should     | RF38             |
+| RF46   | Relatórios de vendas, compras, margens e stock.        | Gestor, Operacional | Must       | RF14, RF18, RF22 |
+| RF47   | KPIs executivos (receita, custos, EBITDA, PMR, PMP).   | Gestor              | Should     | RF38             |
+| RF48   | Personalização de relatórios e exportação (PDF/Excel). | Todos               | Should     | RF38             |
 
 ---
 
@@ -150,11 +150,11 @@
 
 | Código | Requisito                                                                       | Atores               | Prioridade | Dependências |
 | :----- | :------------------------------------------------------------------------------ | :------------------- | :--------- | :----------- |
-| RF41   | Gerar **insights automáticos** (tendências, riscos, clientes, artigos parados). | Gestor, Contabilista | Must       | RF38         |
-| RF42   | Sugerir **ações** (ajustar preços, negociar fornecedor, repor stock).           | Gestor               | Should     | RF41         |
-| RF43   | Permitir **perguntas em linguagem natural** e responder com dados e fonte.      | Gestor, Contabilista | Should     | RF38         |
-| RF44   | Emitir **alertas inteligentes** (cashflow, desvios, ruturas).                   | Gestor               | Should     | RF32, RF25   |
-| RF45   | Mostrar **explicações e fontes** de cada insight.                               | Todos                | Must       | RF41         |
+| RF49   | Gerar **insights automáticos** (tendências, riscos, clientes, artigos parados). | Gestor, Contabilista | Must       | RF38         |
+| RF50   | Sugerir **ações** (ajustar preços, negociar fornecedor, repor stock).           | Gestor               | Should     | RF41         |
+| RF51   | Permitir **perguntas em linguagem natural** e responder com dados e fonte.      | Gestor, Contabilista | Should     | RF38         |
+| RF52   | Emitir **alertas inteligentes** (cashflow, desvios, ruturas).                   | Gestor               | Should     | RF32, RF25   |
+| RF53   | Mostrar **explicações e fontes** de cada insight.                               | Todos                | Must       | RF41         |
 
 ---
 
@@ -162,9 +162,9 @@
 
 | Código | Requisito                                                   | Atores                            | Prioridade | Dependências |
 | :----- | :---------------------------------------------------------- | :-------------------------------- | :--------- | :----------- |
-| RF46   | Criar/editar lembretes (prazos, pagamentos, impostos).      | Todos                             | Should     | -            |
-| RF47   | Criar e atribuir tarefas com estado e prazo.                | Gestor, Contabilista, Operacional | Should     | -            |
-| RF48   | Notificações (in-app/email) para lembretes e alertas da IA. | Todos                             | Should     | RF46, RF44   |
+| RF54   | Criar/editar lembretes (prazos, pagamentos, impostos).      | Todos                             | Should     | -            |
+| RF55   | Criar e atribuir tarefas com estado e prazo.                | Gestor, Contabilista, Operacional | Should     | -            |
+| RF56   | Notificações (in-app/email) para lembretes e alertas da IA. | Todos                             | Should     | RF46, RF44   |
 
 ---
 
@@ -172,9 +172,9 @@
 
 | Código | Requisito                                                            | Atores               | Prioridade | Dependências |
 | :----- | :------------------------------------------------------------------- | :------------------- | :--------- | :----------- |
-| RF49   | Registar **auditoria**: quem, quando, o quê, em operações sensíveis. | Admin, Auditor       | Must       | -            |
-| RF50   | Registar **logs de integração** (uploads, SAF-T, reconciliações).    | Admin                | Must       | -            |
-| RF51   | Permitir **reabertura de períodos** apenas com registo de motivo.    | Gestor, Contabilista | Should     | RF08         |
+| RF57   | Registar **auditoria**: quem, quando, o quê, em operações sensíveis. | Admin, Auditor       | Must       | -            |
+| RF58   | Registar **logs de integração** (uploads, SAF-T, reconciliações).    | Admin                | Must       | -            |
+| RF59   | Permitir **reabertura de períodos** apenas com registo de motivo.    | Gestor, Contabilista | Should     | RF08         |
 
 ---
 
@@ -182,11 +182,11 @@
 
 | Código | Requisito                                                                          | Atores             | Prioridade | Dependências |
 | :----- | :--------------------------------------------------------------------------------- | :----------------- | :--------- | :----------- |
-| RF52   | Definir **workflows de aprovação** por documento (compra, venda, pagamento).       | Gestor, Admin      | Should     | RF18, RF25   |
-| RF53   | Configurar **níveis de aprovação** com limites financeiros e escalamentos.         | Gestor             | Should     | RF52         |
-| RF54   | Painel para monitorizar aprovações pendentes e SLA por tipo de documento.          | Gestor             | Should     | RF52         |
-| RF55   | Agendar pagamentos/recebimentos futuros com integração às previsões de tesouraria. | Tesouraria, Gestor | Should     | RF31         |
-| RF56   | Gerir **linhas de crédito** (limites, utilização, alertas) por banco.              | Gestor, Tesouraria | Should     | RF30         |
+| RF60   | Definir **workflows de aprovação** por documento (compra, venda, pagamento).       | Gestor, Admin      | Should     | RF18, RF25   |
+| RF61   | Configurar **níveis de aprovação** com limites financeiros e escalamentos.         | Gestor             | Should     | RF52         |
+| RF62   | Painel para monitorizar aprovações pendentes e SLA por tipo de documento.          | Gestor             | Should     | RF52         |
+| RF63   | Agendar pagamentos/recebimentos futuros com integração às previsões de tesouraria. | Tesouraria, Gestor | Should     | RF31         |
+| RF64   | Gerir **linhas de crédito** (limites, utilização, alertas) por banco.              | Gestor, Tesouraria | Should     | RF30         |
 
 ---
 
